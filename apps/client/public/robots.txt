@@ -1,0 +1,4 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow: /html
+Sitemap: https://destyk.ru/sitemap.xml
