@@ -1,0 +1,9 @@
+{
+    "extends": "stylelint-config-sass-guidelines",
+    "ignoreFiles": [
+        "apps/**/dist/**/*"
+    ],
+    "rules": {
+        "no-empty-source": true
+    }
+}

@@ -1,0 +1,75 @@
+{
+    "name": "destyk",
+    "version": "0.0.0",
+    "description": "DestyK Website",
+    "author": "DestyK <nikita.karpov.1910@mail.ru>",
+    "homepage": "https://github.com/destyk/website",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "ssh://git@github.com/destyk/website.git"
+    },
+    "scripts": {
+        "clean": "tsc -b --clean packages && del-cli packages/**/*.tsbuildinfo apps/**/dist",
+        "changelog": "lerna-changelog",
+        "prebuild": "npm run clean",
+        "build": "lerna run build",
+        "version:release": "lerna version --conventional-commits --conventional-graduate --yes",
+        "version:staging": "lerna version --conventional-commits --conventional-prerelease --preid staging --yes",
+        "publish:release": "npm run build && npm run version:release && lerna publish from-git --exact -m \"chore: publish release\"",
+        "publish:staging": "npm run build && npm run version:staging && lerna publish from-git -m \"chore: publish staging release\"",
+        "prepare": "husky install"
+    },
+    "workspaces": [
+        "apps/*",
+        "packages/*"
+    ],
+    "lint-staged": {
+        "**/*.ts": [
+            "prettier --ignore-path ./.prettierignore --write"
+        ],
+        "packages/**/*.json": [
+            "prettier --ignore-path ./.prettierignore --write"
+        ],
+        "apps/**/*.json": [
+            "prettier --ignore-path ./.prettierignore --write"
+        ]
+    },
+    "dependencies": {
+        "class-transformer": "^0.5.1",
+        "class-validator": "^0.14.0"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^17.7.1",
+        "@commitlint/config-angular": "^17.7.0",
+        "@typescript-eslint/eslint-plugin": "^6.5.0",
+        "@typescript-eslint/parser": "^6.5.0",
+        "del-cli": "^5.0.1",
+        "eslint": "^8.48.0",
+        "eslint-config-prettier": "^9.0.0",
+        "eslint-plugin-prettier": "^5.0.0",
+        "husky": "^8.0.3",
+        "lerna": "^7.2.0",
+        "lerna-changelog": "^2.2.0",
+        "lint-staged": "^14.0.1",
+        "prettier": "^3.0.3",
+        "stylelint": "^15.11.0",
+        "stylelint-config-sass-guidelines": "^10.0.0",
+        "typescript": "^4.9.5",
+        "utf-8-validate": "^6.0.3"
+    },
+    "changelog": {
+        "labels": {
+            "feature": "Features",
+            "bug": "Bug fixes",
+            "enhancement": "Enhancements",
+            "docs": "Docs",
+            "code style": "Code style tweaks",
+            "dependencies": "Dependencies",
+            "breaking": "Breaking Change"
+        }
+    },
+    "engines": {
+        "node": ">= 18"
+    }
+}

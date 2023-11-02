@@ -1,0 +1,171 @@
+@import './assets/fonts.scss';
+
+$font-family-base: 'Biotif', sans-serif;
+$headings-font-family: 'Neuzeit Grotesk Bold', 'SofiaSans Bold', sans-serif;
+$font-family-code: 'Fira Code', monospace;
+
+$body-bg: #edeef0;
+$body-bg-dark: #08070b;
+$primary: #f2f2f2;
+$secondary: #8f9ba8;
+
+@import '../../../node_modules/bootstrap/scss/bootstrap';
+@import './assets/mixins';
+
+body {
+    overflow-y: scroll;
+    @include scrollbars(5px, 5px, #555, independent);
+}
+
+@include animate-bg();
+
+:root {
+    --background: rgb(28 28 29);
+    --a1: rgb(53 53 54);
+    --a2: rgba(255 255 255 / 0.1);
+    --foreground: rgba(252 252 252 / 0.9);
+    --shadow: rgb(0 0 0 / 50%) 0px 16px 70px;
+}
+
+.container-boxed {
+    max-width: 42em;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 0px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 20px;
+    text-decoration: none;
+    text-shadow: none;
+}
+
+.gradient-text-cyan {
+    background-image: linear-gradient(to bottom right, #80ffea, #8aff80);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.gradient-text-purple {
+    background-image: linear-gradient(to bottom right, #ff80bf, #9580ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.gradient-text-gold {
+    background-image: linear-gradient(to bottom right, #ffff80, #ff80bf);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.linear-gradient-text {
+    user-select: none;
+    color: white;
+    background: repeating-linear-gradient(-45deg, rgb(250, 76, 76) 0%, rgb(238, 238, 77) 7.14%, rgb(72, 228, 72) 14.28%,
+            rgb(77, 224, 224) 21.4%, rgb(76, 76, 240) 28.56%, rgb(71, 71, 238) 35.7%, rgb(240, 92, 240) 42.84%, rgb(255, 106, 106) 50%);
+    background-size: 600vw 600vw;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: slide 4s linear infinite forwards;
+}
+
+@keyframes slide {
+    0% {
+        background-position-x: 0%;
+    }
+
+    100% {
+        background-position-x: 600vw;
+    }
+}
+
+a:not(.btn) {
+    text-decoration: none;
+    text-transform: lowercase;
+    transition: color 0.2s ease-in-out;
+}
+
+strong {
+    font-weight: 500;
+}
+
+kbd {
+    padding: 1px 5px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease-in-out;
+    font-size: 14px;
+}
+
+blockquote {
+    font-style: italic;
+    margin: 0;
+    padding-left: 20px;
+}
+
+$color-mode-type: data;
+
+@include color-mode(dark) {
+    $bg-right-color: hsl(192, 79.3%, 6.8%);
+    $bg-left-color: hsl(252, 40.1%, 8.5%);
+
+    blockquote {
+        @extend blockquote;
+        border-left: 4px solid #212024;
+        color: $secondary;
+    }
+    
+    a {
+        @extend a;
+        color: $secondary;
+    }
+
+    a:hover {
+        color: $primary;
+    }
+    
+    p {
+        color: $secondary;
+    }
+
+    strong {
+        @extend strong;
+        color: $primary;
+    }
+
+    kbd {
+        @extend kbd;
+        color: $body-bg-dark;
+        background: $secondary;
+    }
+
+    .btn-secondary {
+        @extend .btn-secondary;
+        color: $primary;
+    }
+
+    .btn-secondary:hover {
+        background: #212024;
+        color: $primary;
+    }
+
+    .btn-secondary:hover kbd {
+        background: $primary;
+    }
+
+    .background {
+        background: radial-gradient(circle at top left, $bg-left-color, rgba(255, 255, 255, 0) 15%), radial-gradient(circle at 100% 20%, $bg-right-color, rgba(255, 255, 255, 0) 15%);
+    }
+
+    @include media-breakpoint-up(lg) {
+        .background {
+            background: radial-gradient(circle at 15% 50%, $bg-left-color, rgba(255, 255, 255, 0) 22%),
+                radial-gradient(circle at 85% 30%, $bg-right-color, rgba(255, 255, 255, 0) 20%);
+        }
+    }
+}
