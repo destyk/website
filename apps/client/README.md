@@ -7,16 +7,6 @@
       <a href="https://destyk.ru" target="_blank"><img src="https://img.shields.io/badge/Website-ED760E?style=flat-square&logo=About.me" alt="Website" /></a>
 </p>
 
-## Getting Started
-
-#### Clone repository:
-
-`$ git clone git@github.com:destyk/website.git`
-
-#### Install dependencies:
-
-`$ npm i`
-
 ## Available Scripts
 
 In the project directory, you can run:
@@ -29,7 +19,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-`$ lerna run start --scope @destyk/client`
+`$ npm run start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
