@@ -57,4 +57,4 @@ Builds applications and packages, versioning (`npm run version:staging`) and sen
 
 ## Learn More
 
-@destyk/client - <a href="https://github.com/destyk/website/edit/stable/apps/client/README.md">Read more</a>
+@destyk/client - <a href="https://github.com/destyk/website/blob/stable/apps/client/README.md">Read more</a>
