@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://destyk.ru/" target="blank"><img src="https://github.com/destyk/website/blob/stable/apps/client/public/logo192.png" width="120" alt="DestyK Logo" /></a>
 </p>
-<p align="center">A monorepo that combines all packages and apps for building a project.</p>
+<p align="center">A monorepo that combines all packages and apps for building a project using <a href="https://www.typescriptlang.org">Typescript</a>, <a href="https://react.dev">React</a>, <a href="https://sass-lang.com">SCSS</a>.</p>
     <p align="center">
       <a href="https://t.me/destykarpov" target="_blank"><img src="https://img.shields.io/badge/Telegram-blue?style=flat-square&logo=Telegram" alt="Telegram" /></a>
       <a href="https://destyk.ru" target="_blank"><img src="https://img.shields.io/badge/Website-ED760E?style=flat-square&logo=About.me" alt="Website" /></a>
@@ -39,12 +39,15 @@ Changelog is based on the selected branch. Before each use of this command, you 
 
 `$ npm run version:release`
 
-Generates versions for packages and applications.\
+Generates and commits versions for packages and applications.\
+If the command fails, you should run the following commands:
+`$ git stash && lerna version --conventional-commits --yes`
+
 <b>⚠️ Used before publication for production versions.</b>
 
 `$ npm run version:staging`
 
-Generates versions for packages and applications.\
+Generates and commits versions for packages and applications.\
 <b>⚠️ Used before publication for dev versions.</b>
 
 `$ npm run publish:release`
