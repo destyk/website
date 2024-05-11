@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://destyk.ru/" target="blank"><img src="https://github.com/destyk/website/blob/stable/apps/client/public/logo192.png" width="120" alt="DestyK Logo" /></a>
+  <a href="https://destyk.ru/" target="blank"><img src="https://github.com/destyk/website/blob/stable/public/logo192.png" width="120" alt="DestyK Logo" /></a>
 </p>
 <p align="center">Personal site repository for building a project using <a href="https://www.typescriptlang.org">Typescript</a>, <a href="https://nextjs.org">NextJS</a>, <a href="https://sass-lang.com">SCSS</a>.</p>
   <p align="center">
