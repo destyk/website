@@ -1,76 +1,64 @@
 {
-    "name": "destyk",
-    "version": "0.0.0",
-    "description": "DestyK Website",
-    "author": "DestyK <nikita.karpov.1910@mail.ru>",
-    "homepage": "https://github.com/destyk/website",
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "ssh://git@github.com/destyk/website.git"
-    },
-    "scripts": {
-        "clean": "tsc -b --clean packages && del-cli packages/**/*.tsbuildinfo apps/**/dist",
-        "changelog": "lerna-changelog",
-        "prebuild": "npm run clean",
-        "build": "lerna run build",
-        "version:release": "lerna version --conventional-commits --conventional-graduate --yes",
-        "version:staging": "lerna version --conventional-commits --conventional-prerelease --preid staging --yes",
-        "publish:release": "npm run build && npm run version:release && lerna publish from-git --exact -m \"chore: publish release\"",
-        "publish:staging": "npm run build && npm run version:staging && lerna publish from-git -m \"chore: publish staging release\"",
-        "prepare": "husky install"
-    },
-    "workspaces": [
-        "apps/*",
-        "packages/*"
-    ],
-    "lint-staged": {
-        "**/*.ts": [
-            "prettier --ignore-path ./.prettierignore --write"
-        ],
-        "packages/**/*.json": [
-            "prettier --ignore-path ./.prettierignore --write"
-        ],
-        "apps/**/*.json": [
-            "prettier --ignore-path ./.prettierignore --write"
-        ]
-    },
-    "dependencies": {
-        "class-transformer": "^0.5.1",
-        "class-validator": "^0.14.0"
-    },
-    "devDependencies": {
-        "@commitlint/cli": "^17.7.1",
-        "@commitlint/config-angular": "^17.7.0",
-        "@typescript-eslint/eslint-plugin": "^6.5.0",
-        "@typescript-eslint/parser": "^6.5.0",
-        "cross-env": "^7.0.3",
-        "del-cli": "^5.0.1",
-        "eslint": "^8.48.0",
-        "eslint-config-prettier": "^9.0.0",
-        "eslint-plugin-prettier": "^5.0.0",
-        "husky": "^8.0.3",
-        "lerna": "^7.2.0",
-        "lerna-changelog": "^2.2.0",
-        "lint-staged": "^14.0.1",
-        "prettier": "^3.0.3",
-        "stylelint": "^15.11.0",
-        "stylelint-config-sass-guidelines": "^10.0.0",
-        "typescript": "^4.9.5",
-        "utf-8-validate": "^6.0.3"
-    },
-    "changelog": {
-        "labels": {
-            "feature": "Features",
-            "bug": "Bug fixes",
-            "enhancement": "Enhancements",
-            "docs": "Docs",
-            "code style": "Code style tweaks",
-            "dependencies": "Dependencies",
-            "breaking": "Breaking Change"
-        }
-    },
-    "engines": {
-        "node": ">= 18"
-    }
+  "name": "website",
+  "version": "0.0.0",
+  "description": "DestyK Website",
+  "author": "DestyK <nikita.karpov.1910@mail.ru>",
+  "homepage": "https://github.com/destyk/website",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/destyk/website.git"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.1.9",
+    "next": "14.2.3",
+    "react": "^18",
+    "react-bootstrap-icons": "^1.11.4",
+    "react-device-detect": "^2.2.3",
+    "react-dom": "^18",
+    "sharp": "^0.33.3"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-angular": "^19.3.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^12.0.0",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^10.0.3",
+    "@semantic-release/npm": "^12.0.0",
+    "@semantic-release/release-notes-generator": "^13.0.0",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@typescript-eslint/parser": "^7.8.0",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "14.2.3",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-react": "^7.34.1",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
+    "sass": "^1.77.0",
+    "semantic-release": "^23.0.8",
+    "stylelint": "^16.5.0",
+    "stylelint-config-sass-guidelines": "^11.1.0",
+    "typescript": "^5"
+  },
+  "lint-staged": {
+    "**/*.ts": [
+      "prettier --ignore-path ./.prettierignore --write"
+    ]
+  },
+  "engines": {
+    "node": ">= 18"
+  }
 }

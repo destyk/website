@@ -1,0 +1,42 @@
+{
+  "branches": [
+    {
+      "name": "stable",
+      "prerelease": false
+    },
+    {
+      "name": "staging",
+      "prerelease": true
+    }
+  ],
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/changelog",
+      {
+        "changelogFile": "CHANGELOG.md"
+      }
+    ],
+    [
+      "@semantic-release/npm",
+      {
+        "npmPublish": false,
+        "tarballDir": "out"
+      }
+    ],
+    [
+      "@semantic-release/github",
+      {
+        "assets": "out/*.tgz"
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "assets": ["README.md", "CHANGELOG.md", "package.json"],
+        "message": "chore(release): set `package.json` to ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+      }
+    ]
+  ]
+}

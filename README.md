@@ -1,10 +1,10 @@
 <p align="center">
   <a href="https://destyk.ru/" target="blank"><img src="https://github.com/destyk/website/blob/stable/apps/client/public/logo192.png" width="120" alt="DestyK Logo" /></a>
 </p>
-<p align="center">A monorepo that combines all packages and apps for building a project using <a href="https://www.typescriptlang.org">Typescript</a>, <a href="https://react.dev">React</a>, <a href="https://sass-lang.com">SCSS</a>.</p>
-    <p align="center">
-      <a href="https://t.me/destykarpov" target="_blank"><img src="https://img.shields.io/badge/Telegram-blue?style=flat-square&logo=Telegram" alt="Telegram" /></a>
-      <a href="https://destyk.ru" target="_blank"><img src="https://img.shields.io/badge/Website-ED760E?style=flat-square&logo=About.me" alt="Website" /></a>
+<p align="center">Personal site repository for building a project using <a href="https://www.typescriptlang.org">Typescript</a>, <a href="https://nextjs.org">NextJS</a>, <a href="https://sass-lang.com">SCSS</a>.</p>
+  <p align="center">
+    <a href="https://t.me/destykarpov" target="_blank"><img src="https://img.shields.io/badge/Telegram-blue?style=flat-square&logo=Telegram" alt="Telegram" /></a>
+    <a href="https://destyk.ru" target="_blank"><img src="https://img.shields.io/badge/Website-ED760E?style=flat-square&logo=About.me" alt="Website" /></a>
 </p>
 
 ## Getting Started
@@ -23,41 +23,20 @@ In the root directory, you can run:
 
 `$ npm run build`
 
-Build all packages and applications.\
+Build the project.\
 It builds correctly in production mode and optimizes for the best performance.
 
-`$ npm run clean`
+`$ npm run start`
 
-Cleans up compile files.\
-Useful to run before building applications and packages.
+Running the current version project.\
+Launch of the production version of the project.
 
-`$ cross-env GITHUB_AUTH=TOKEN npm run changelog`
+`$ npm run dev`
 
-Forms changelog based on accepted PR.
+Running the project in debug mode.\
+Ideal for development as it allows you to see all the changes you make on the fly.
 
-Changelog is based on the selected branch. Before each use of this command, you need to choose the desired branch for the correct construction of changelog.
+`$ npm run lint`
 
-`$ npm run version:release`
-
-Generates and commits versions for packages and applications.\
-If the command fails, you should run the following commands:
-`$ git stash && lerna version --conventional-commits --yes`
-
-<b>⚠️ Used before publication for production versions.</b>
-
-`$ npm run version:staging`
-
-Generates and commits versions for packages and applications.\
-<b>⚠️ Used before publication for dev versions.</b>
-
-`$ npm run publish:release`
-
-Builds applications and packages, versioning (`npm run version:release`) and sending new versions of packages to npm repositories and commits versions to the github repository.
-
-`$ npm run publish:staging`
-
-Builds applications and packages, versioning (`npm run version:staging`) and sending new versions of packages to npm repositories and commits versions to the github repository.
-
-## Learn More
-
-@destyk/client - <a href="https://github.com/destyk/website/blob/stable/apps/client/README.md">Read more</a>
+Launching ESLint.\
+Code formatting based on prettier & eslint configs.
