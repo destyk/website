@@ -6,11 +6,6 @@ const Document = () => {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#08070b" />
-        <meta
-          name="description"
-          content="DestyK i.e. Nikita Arefev - A software engineer working on high-load web applications and web infrastructure"
-        />
-        <meta name="keywords" content="Ключевые слова" />
         <meta name="author" content="destyk." />
 
         <link rel="icon" href="/favicon.ico" />
