@@ -1,16 +1,11 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 
-export default function Document() {
+const Document = () => {
   return (
     <Html lang="en" className="h-100" data-bs-theme="dark">
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#08070b" />
-        <meta
-          name="description"
-          content="DestyK i.e. Nikita Arefev - A software engineer working on high-load web applications and web infrastructure"
-        />
-        <meta name="keywords" content="Ключевые слова" />
         <meta name="author" content="destyk." />
 
         <link rel="icon" href="/favicon.ico" />
@@ -23,4 +18,6 @@ export default function Document() {
       </body>
     </Html>
   );
-}
+};
+
+export default Document;

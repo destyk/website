@@ -1,5 +1,5 @@
 import Wrapper from '@feature/wrapper/wrapper';
-import { useEffect, type ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 
@@ -13,17 +13,12 @@ type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
 
-export default function App({ Component, pageProps }: AppPropsWithLayout) {
-  useEffect(() => {
-    const __next = document.getElementById('__next');
-    if (__next !== null) {
-      __next.className = 'w-100 h-100';
-    }
-  }, []);
-
+const App = ({ Component, pageProps }: AppPropsWithLayout) => {
   return (
     <Wrapper>
       <Component {...pageProps} />
     </Wrapper>
   );
-}
+};
+
+export default App;

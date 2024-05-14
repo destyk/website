@@ -12,6 +12,11 @@ $secondary: #8f9ba8;
 @import '../../node_modules/bootstrap/scss/bootstrap';
 @import './mixins';
 
+#__next {
+  height: 100% !important;
+  width: 100% !important;
+}
+
 body {
   overflow-y: scroll;
   @include scrollbars(5px, 5px, #555, independent);

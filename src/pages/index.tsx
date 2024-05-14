@@ -14,6 +14,10 @@ const HomePage = () => {
     <>
       <Head>
         <title>Home</title>
+        <meta
+          name="description"
+          content="DestyK i.e. Nikita Arefev - A software engineer working on high-load web applications and web infrastructure"
+        />
       </Head>
       <motion.main
         className={clsx(styles['home'], 'mt-auto', 'text-center')}
