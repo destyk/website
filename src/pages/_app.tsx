@@ -13,10 +13,12 @@ type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
 
-export default function App({ Component, pageProps }: AppPropsWithLayout) {
+const App = ({ Component, pageProps }: AppPropsWithLayout) => {
   return (
     <Wrapper>
       <Component {...pageProps} />
     </Wrapper>
   );
-}
+};
+
+export default App;
